@@ -102,12 +102,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
-            RotationAnimations(),
-            RotationBounceInAnimations(),
-            ScaleAnimations(),
-            TranslateAnimations(),
+            const RotationAnimations(),
+            const RotationBounceInAnimations(),
+            const ScaleAnimations(),
+            const TranslateAnimations(),
           ],
         ),
       ),
@@ -150,7 +150,7 @@ class _RotationAnimationsState extends State<RotationAnimations> with SingleTick
     return Transform.rotate(
       angle: _angle,
       child: ElevatedButton(
-        child: Text("Rotated button"),
+        child: const Text("Rotated button"),
         onPressed: () {
           if (_animation.status == AnimationStatus.completed) {
             _animation.reset();
@@ -165,7 +165,7 @@ class _RotationAnimationsState extends State<RotationAnimations> with SingleTick
     var animation = AnimationController(
       vsync: this,
       debugLabel: "animations demo",
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
     );
 
     animation.addListener(() {
@@ -177,6 +177,7 @@ class _RotationAnimationsState extends State<RotationAnimations> with SingleTick
     return animation;
   }
 
+  @override
   void dispose() {
     _animation.dispose();
     super.dispose();
@@ -213,7 +214,7 @@ class _RotationBounceInAnimationsState extends State<RotationBounceInAnimations>
     return Transform.rotate(
       angle: _angle,
       child: ElevatedButton(
-        child: Text("Rotated button"),
+        child: const Text("Rotated button"),
         onPressed: () {
           if (_animation.status == AnimationStatus.completed) {
             _animation.reset();
@@ -228,7 +229,7 @@ class _RotationBounceInAnimationsState extends State<RotationBounceInAnimations>
     var controller = AnimationController(
       vsync: this,
       debugLabel: "animations demo",
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
     );
 
     var animation = controller.drive(CurveTween(
@@ -244,6 +245,7 @@ class _RotationBounceInAnimationsState extends State<RotationBounceInAnimations>
     return controller;
   }
 
+  @override
   void dispose() {
     _animation.dispose();
     super.dispose();
@@ -280,7 +282,7 @@ class _ScaleAnimationsState extends State<ScaleAnimations> with SingleTickerProv
     return Transform.scale(
       scale: _scale,
       child: ElevatedButton(
-        child: Text("Scaled button"),
+        child: const Text("Scaled button"),
         onPressed: () {
           if (_animation.status == AnimationStatus.completed) {
             _animation.reverse();
@@ -298,7 +300,7 @@ class _ScaleAnimationsState extends State<ScaleAnimations> with SingleTickerProv
       lowerBound: 1.0,
       upperBound: 2.0,
       debugLabel: "animations demo",
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
     );
 
     animation.addListener(() {
@@ -310,6 +312,7 @@ class _ScaleAnimationsState extends State<ScaleAnimations> with SingleTickerProv
     return animation;
   }
 
+  @override
   void dispose() {
     _animation.dispose();
     super.dispose();
@@ -346,7 +349,7 @@ class _TranslateAnimationsState extends State<TranslateAnimations> with SingleTi
     return Transform.translate(
       offset: _offset,
       child: ElevatedButton(
-        child: Text("Translated button"),
+        child: const Text("Translated button"),
         onPressed: () {
           if (_animation.status == AnimationStatus.completed) {
             _animation.reverse();
@@ -362,13 +365,13 @@ class _TranslateAnimationsState extends State<TranslateAnimations> with SingleTi
     var controller = AnimationController(
       vsync: this,
       debugLabel: "animations demo",
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
     );
 
     var animation = controller.drive(
       Tween<Offset>(
         begin: Offset.zero,
-        end: Offset(70, 200),
+        end: const Offset(70, 200),
       ),
     );
 
@@ -381,6 +384,7 @@ class _TranslateAnimationsState extends State<TranslateAnimations> with SingleTi
     return controller;
   }
 
+  @override
   void dispose() {
     _animation.dispose();
     super.dispose();

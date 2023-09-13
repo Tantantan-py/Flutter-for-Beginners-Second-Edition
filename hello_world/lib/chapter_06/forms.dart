@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class FormExample extends StatefulWidget {
   const FormExample({Key? key}) : super(key: key);
@@ -10,7 +9,7 @@ class FormExample extends StatefulWidget {
 
 class _FormExampleState extends State<FormExample> {
   final _controller = TextEditingController.fromValue(
-    TextEditingValue(text: "Initial value"),
+    const TextEditingValue(text: "Initial value"),
   );
   final _key = GlobalKey<FormFieldState<String>>();
   String _textValue = "";
@@ -18,7 +17,7 @@ class _FormExampleState extends State<FormExample> {
   @override
   void initState() {
     _controller.addListener(() {
-      this.setState(() {
+      setState(() {
         _textValue = _controller.text;
       });
     });
@@ -42,10 +41,10 @@ class _FormExampleState extends State<FormExample> {
           Builder(
             builder: (BuildContext subContext) => TextButton(
               onPressed: () {
-                final valid = Form.of(subContext)!.validate();
+                final valid = Form.of(subContext).validate();
                 print("valid: $valid");
               },
-              child: Text("validate"),
+              child: const Text("validate"),
             ),
           )
         ],

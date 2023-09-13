@@ -4,15 +4,15 @@ class Person {
 
   set fullName(String fullName) {
     var parts = fullName.split(" ");
-    this.firstName = parts.first;
-    this.lastName = parts.last;
+    firstName = parts.first;
+    lastName = parts.last;
   }
 
   String get fullName => "$firstName $lastName";
 }
 
 main() {
-  Person somePerson = new Person();
+  Person somePerson = Person();
   somePerson.firstName = "Clark";
   somePerson.lastName = "Kent";
 

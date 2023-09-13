@@ -50,7 +50,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  final TextEditingController _controller = TextEditingController.fromValue(TextEditingValue(text: ""));
+  final TextEditingController _controller = TextEditingController.fromValue(const TextEditingValue(text: ""));
 
   void _incrementCounter() {
     setState(() {
@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             Form(
               child: Column(
@@ -112,10 +112,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   Builder(
                     builder: (BuildContext subContext) => ElevatedButton(
                       onPressed: () {
-                        final valid = Form.of(subContext)?.validate();
+                        final valid = Form.of(subContext).validate();
                         print("valid: $valid");
                       },
-                      child: Text("validate"),
+                      child: const Text("validate"),
                     ),
                   )
                 ],

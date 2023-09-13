@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _MyAppState();
 }
@@ -13,7 +15,7 @@ class _MyAppState extends State<MyApp> {
   String? _selectedTown;
 
   void _setTownName(String townName) {
-    this.setState(() {
+    setState(() {
       _selectedTown = townName;
     });
   }
@@ -63,7 +65,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({required this.title, required this.townNameCallback});
+  const MyHomePage({Key? key, required this.title, required this.townNameCallback}) : super(key: key);
   final void Function(String) townNameCallback;
 
   // This widget is the home page of your application. It is stateful, meaning
@@ -134,16 +136,16 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             ElevatedButton(
-              child: Text('Whitby'),
+              child: const Text('Whitby'),
               onPressed: () {
                 widget.townNameCallback("Whitby");
               },
             ),
             ElevatedButton(
-              child: Text('Scarborough'),
+              child: const Text('Scarborough'),
               onPressed: () async {
                 widget.townNameCallback("Scarborough");
               },
@@ -161,7 +163,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class TownScreen extends StatelessWidget {
-  TownScreen({required this.title});
+  const TownScreen({Key? key, required this.title}) : super(key: key);
   final String title;
   @override
   Widget build(BuildContext context) {
@@ -172,7 +174,7 @@ class TownScreen extends StatelessWidget {
           children: [
             Text(title),
             ElevatedButton(
-              child: Text("Close"),
+              child: const Text("Close"),
               onPressed: () {
                 Navigator.of(context).pop();
               },

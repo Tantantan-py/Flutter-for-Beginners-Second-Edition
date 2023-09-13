@@ -102,12 +102,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             Transform.rotate(
               angle: -45 * (pi / 180.0),
               child: ElevatedButton(
-                child: Text("Rotated button"),
+                child: const Text("Rotated button"),
                 onPressed: () {},
               ),
             ),
@@ -115,14 +115,14 @@ class _MyHomePageState extends State<MyHomePage> {
               transform: Matrix4.rotationZ(-45 * (pi / 180.0)),
               alignment: Alignment.center,
               child: ElevatedButton(
-                child: Text("Rotated button"),
+                child: const Text("Rotated button"),
                 onPressed: () {},
               ),
             ),
             Transform.scale(
               scale: 2.0,
               child: ElevatedButton(
-                child: Text("scaled up"),
+                child: const Text("scaled up"),
                 onPressed: () {},
               ),
             ),
@@ -130,32 +130,32 @@ class _MyHomePageState extends State<MyHomePage> {
               transform: Matrix4.identity()..scale(2.0, 2.0),
               alignment: Alignment.center,
               child: ElevatedButton(
-                child: Text("scaled up (matrix)"),
+                child: const Text("scaled up (matrix)"),
                 onPressed: () {},
               ),
             ),
             Transform.translate(
-              offset: Offset(100, 300),
+              offset: const Offset(100, 300),
               child: ElevatedButton(
-                child: Text("translated to bottom"),
+                child: const Text("translated to bottom"),
                 onPressed: () {},
               ),
             ),
             Transform(
               transform: Matrix4.translationValues(100, 300, 0),
               child: ElevatedButton(
-                child: Text("translated to bottom (matrix)"),
+                child: const Text("translated to bottom (matrix)"),
                 onPressed: () {},
               ),
             ),
             Transform.translate(
-              offset: Offset(70, 200),
+              offset: const Offset(70, 200),
               child: Transform.rotate(
                 angle: -45 * (pi / 180.0),
                 child: Transform.scale(
                   scale: 2.0,
                   child: ElevatedButton(
-                    child: Text("multiple transformations"),
+                    child: const Text("multiple transformations"),
                     onPressed: () {},
                   ),
                 ),
@@ -167,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ..rotateZ(-45 * (pi / 180.0))
                 ..scale(2.0, 2.0),
               child: ElevatedButton(
-                child: Text("multiple transformations (matrix)"),
+                child: const Text("multiple transformations (matrix)"),
                 onPressed: () {},
               ),
             )

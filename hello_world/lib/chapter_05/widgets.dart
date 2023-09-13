@@ -3,13 +3,13 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 main() {
-  Text(
+  const Text(
     "Some exciting text",
     style: TextStyle(color: Colors.red, fontSize: 14),
     textAlign: TextAlign.center,
   );
 
-  Image(
+  const Image(
     image: AssetImage(
       "assets/dart_logo.jpg",
     ),
@@ -29,13 +29,13 @@ main() {
     decoration: BoxDecoration(
       border: Border.all(),
     ),
-    padding: EdgeInsets.all(14),
-    child: Text(
+    padding: const EdgeInsets.all(14),
+    child: const Text(
       'Beautiful Teesside',
     ),
   );
 
-  Row(
+  const Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
       Text("Staithes"),

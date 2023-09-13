@@ -100,14 +100,14 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             ElevatedButton(
-              child: Text('Press this'),
+              child: const Text('Press this'),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return AnotherScreen(title: "Go back");
+                    return const AnotherScreen(title: "Go back");
                   }),
                 );
               },
@@ -125,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class AnotherScreen extends StatelessWidget {
-  AnotherScreen({required this.title});
+  const AnotherScreen({Key? key, required this.title}) : super(key: key);
   final String title;
   @override
   Widget build(BuildContext context) {

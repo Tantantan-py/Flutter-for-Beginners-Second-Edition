@@ -22,7 +22,7 @@ class _QRViewerState extends State<QRViewer> {
   }
 
   void _onQRViewCreated(QRViewController controller) {
-    this._qrController = controller;
+    _qrController = controller;
     controller.scannedDataStream.listen((scanData) {
       setState(() {
         _qrCode = scanData.code;

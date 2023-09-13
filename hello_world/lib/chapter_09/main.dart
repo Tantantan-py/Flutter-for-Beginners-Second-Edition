@@ -160,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _loadAdvert() async {
     await RewardedAd.load(
       adUnitId: "AdUnitId",
-      request: AdRequest(),
+      request: const AdRequest(),
       rewardedAdLoadCallback: RewardedAdLoadCallback(
         onAdFailedToLoad: (LoadAdError error) async {
           print("Failed to load ad ${error.message}");
@@ -317,7 +317,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),

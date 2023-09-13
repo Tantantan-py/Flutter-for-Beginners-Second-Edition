@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TapExample extends StatefulWidget {
-  TapExample({Key? key}) : super(key: key);
+  const TapExample({Key? key}) : super(key: key);
 
   @override
   _TapExampleState createState() => _TapExampleState();
